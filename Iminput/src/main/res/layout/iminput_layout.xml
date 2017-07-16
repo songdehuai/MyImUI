@@ -14,28 +14,31 @@
         android:background="@android:color/white"
         android:elevation="1dp">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/iminput_voice"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
+            android:backgroundTint="@android:color/white"
             android:padding="10dp"
             android:src="@drawable/ic_voice" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/iminput_send"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:backgroundTint="@android:color/white"
             android:padding="10dp"
             android:src="@drawable/ic_send" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/iminput_img"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_toLeftOf="@id/iminput_send"
+            android:backgroundTint="@android:color/white"
             android:padding="10dp"
             android:src="@drawable/ic_image" />
 
