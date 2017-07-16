@@ -3,13 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:focusableInTouchMode="false"
     android:layout_margin="10dp"
-    tools:background="#555555">
+    android:padding="10dp">
 
 
     <ImageView
         android:id="@+id/msg_receive_img"
         android:layout_width="50dp"
+        android:src="@drawable/ic_directions"
         android:layout_height="50dp"
         android:layout_gravity="center" />
 
@@ -25,7 +27,7 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:paddingTop="8dp"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="16sp"
         tools:text="吃什么" />
 

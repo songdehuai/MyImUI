@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Iminput/iminput.iml" filepath="$PROJECT_DIR$/Iminput/iminput.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Iminput/Iminput.iml" filepath="$PROJECT_DIR$/Iminput/Iminput.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyImUI.iml" filepath="$PROJECT_DIR$/MyImUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/immsglist/immsglist.iml" filepath="$PROJECT_DIR$/immsglist/immsglist.iml" />
