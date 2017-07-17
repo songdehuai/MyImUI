@@ -56,6 +56,9 @@ public class ImMsgLilstAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         } else if (viewType == 4) {
             rootView = LayoutInflater.from(context).inflate(R.layout.item_voice_send, parent, false);
             return new SendVoiceViewHolder(rootView);
+        } else if (viewType == 5) {
+            rootView = LayoutInflater.from(context).inflate(R.layout.item_img_receive, parent, false);
+            ///////////////////////
         }
         return null;
     }
@@ -71,6 +74,8 @@ public class ImMsgLilstAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             return 3;
         } else if ("send_voice".equals(type)) {
             return 4;
+        } else if ("receive_img".equals(type)) {
+            return 5;
         }
         return 0;
     }
@@ -99,6 +104,15 @@ public class ImMsgLilstAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public int getItemCount() {
         return msgList.size();
+    }
+
+    //public class Base
+
+    public static class ReceiveImageViewHolder extends RecyclerView.ViewHolder {
+
+        public ReceiveImageViewHolder(View itemView) {
+            super(itemView);
+        }
     }
 
 
