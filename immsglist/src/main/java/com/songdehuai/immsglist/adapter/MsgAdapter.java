@@ -10,9 +10,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.songdehuai.immsglist.R;
 import com.songdehuai.immsglist.entity.Msg;
 
+
+import org.xutils.x;
 
 import java.util.List;
 
@@ -95,6 +98,16 @@ public class MsgAdapter extends BaseAdapter {
             sendViewHolder = new MsgSendViewHolder(convertView);
             //发送的消息
             sendViewHolder.text.setText(msg.getText());
+        } else if (msg.getType().equals("receive_img")) {
+            convertView = View.inflate(context, R.layout.item_msg_receive, null);
+            receiveViewHolder = new MsgReceiveViewHolder(convertView);
+            //接收的图片
+            Glide.with(context).load(msg.getUri()).into(receiveViewHolder.imageView);
+        } else if (msg.getType().equals("send_img")) {
+            convertView = View.inflate(context, R.layout.item_msg_send, null);
+            sendViewHolder = new MsgSendViewHolder(convertView);
+            //发送的图片
+            Glide.with(context).load(msg.getUri()).into(sendViewHolder.imageView);
         }
 
         return convertView;

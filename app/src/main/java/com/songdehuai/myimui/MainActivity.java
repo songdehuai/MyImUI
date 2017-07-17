@@ -1,5 +1,8 @@
 package com.songdehuai.myimui;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -41,18 +44,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSendClick(String text) {
                 imList.SendMsg(text);
-                imList.Receive(text);
             }
 
             @Override
             public void onImageClick() {
-
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, RESULT_OK);
             }
 
             @Override
             public void onVoiceClick() {
-
+                imList.SendVoice("20");
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RESULT_OK) {
+            if (data != null) {
+                Uri uri = data.getData();
+                if (uri != null) {
+                    imList.SendImg(uri);
+                }
+            }
+        }
     }
 }

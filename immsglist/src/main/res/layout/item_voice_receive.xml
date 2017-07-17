@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:focusableInTouchMode="false"
+    android:padding="10dp">
+
+
+    <ImageView
+        android:id="@+id/msg_receive_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_directions" />
+
+
+    <TextView
+        android:id="@+id/msg_receive_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/msg_receive_img"
+        android:background="@drawable/bg_item_msg_receive"
+        android:drawableRight="@drawable/ic_volume_receive"
+        android:elevation="1dp"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        tools:text="     10秒     " />
+
+
+</RelativeLayout>
+
