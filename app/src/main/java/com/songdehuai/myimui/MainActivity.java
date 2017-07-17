@@ -16,6 +16,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    static final int code = 001;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onImageClick() {
                 Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent, RESULT_OK);
+                startActivityForResult(intent, code);
             }
 
             @Override
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RESULT_OK) {
+        if (requestCode == code) {
             if (data != null) {
                 Uri uri = data.getData();
                 if (uri != null) {
