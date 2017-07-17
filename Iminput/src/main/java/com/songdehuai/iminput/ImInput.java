@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -21,7 +22,7 @@ import android.widget.LinearLayout;
 public class ImInput extends LinearLayout {
 
     EditText edit;
-    ImageView image, send, voice;
+    ImageButton image, send, voice;
     View rootView;
 
     private ImInputListener imInputListener;
@@ -50,9 +51,9 @@ public class ImInput extends LinearLayout {
     void initLayout(Context context) {
         rootView = LayoutInflater.from(context).inflate(R.layout.iminput_layout, this);
         edit = (EditText) rootView.findViewById(R.id.iminput_edit);
-        image = (ImageView) rootView.findViewById(R.id.iminput_img);
-        send = (ImageView) rootView.findViewById(R.id.iminput_send);
-        voice = (ImageView) rootView.findViewById(R.id.iminput_voice);
+        image = (ImageButton) rootView.findViewById(R.id.iminput_img);
+        send = (ImageButton) rootView.findViewById(R.id.iminput_send);
+        voice = (ImageButton) rootView.findViewById(R.id.iminput_voice);
         setOnCLick();
     }
 
