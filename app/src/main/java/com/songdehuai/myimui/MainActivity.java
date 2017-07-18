@@ -8,6 +8,8 @@ import com.songdehuai.myimui.pager.BasePager;
 import com.songdehuai.myimui.pager.MsgListPager;
 import com.songdehuai.myimui.pager.PagerFragment;
 
+import org.xutils.x;
+
 import java.util.ArrayList;
 import java.util.List;
 

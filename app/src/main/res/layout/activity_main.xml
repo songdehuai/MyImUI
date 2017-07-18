@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_above="@+id/act_main_bottom_radio"
-        android:background="#eeeeee"/>
+        android:background="#eeeeee" />
 
     <RadioGroup
         android:id="@+id/act_main_bottom_radio"

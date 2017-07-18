@@ -59,12 +59,9 @@ public class MsgListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Holder holder = null;
-        if (convertView == null) {
+        if (null == convertView) {
             convertView = View.inflate(context, R.layout.item_msglist, null);
-            holder = new Holder();
-            holder.txtName = (TextView) convertView.findViewById(R.id.item_txt_user_name);
-            holder.txtRecent = (TextView) convertView.findViewById(R.id.item_txt_recent_message);
-            holder.txtDate = (TextView) convertView.findViewById(R.id.item_txt_recent_date);
+            holder = new Holder(convertView);
             convertView.setTag(holder);
         } else {
             holder = (Holder) convertView.getTag();
@@ -78,5 +75,11 @@ public class MsgListAdapter extends BaseAdapter {
     private class Holder {
         TextView txtName, txtRecent, txtDate;
         ImageView imgAvatar;
+
+        public Holder(View itemView) {
+            txtName = (TextView) itemView.findViewById(R.id.item_txt_user_name);
+            txtRecent = (TextView) itemView.findViewById(R.id.item_txt_recent_message);
+            txtDate = (TextView) itemView.findViewById(R.id.item_txt_recent_date);
+        }
     }
 }
