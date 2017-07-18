@@ -7,18 +7,51 @@
     android:background="#eeeeee"
     tools:context="com.songdehuai.myimui.MainActivity">
 
-
-    <com.songdehuai.iminput.ImInput
-        android:id="@+id/iminput"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true" />
-
-
-    <com.songdehuai.immsglist.ImMsgListView
-        android:id="@+id/imlist"
+    <FrameLayout
+        android:id="@+id/act_main_top_fragments"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/iminput" />
+        android:layout_above="@+id/act_main_bottom_radio"
+        android:background="@color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/act_main_bottom_radio"
+        android:background="#eeeeee"/>
+
+    <RadioGroup
+        android:id="@+id/act_main_bottom_radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+        <RadioButton
+            android:id="@+id/act_main_bottom_radio_msglist"
+            style="@style/radio_button_style"
+            android:checked="false"
+            android:drawableTop="@drawable/ic_sms_black"
+            android:text="消息" />
+
+        <RadioButton
+            android:id="@+id/act_main_bottom_radio_contact"
+            style="@style/radio_button_style"
+            android:checked="false"
+            android:drawableTop="@drawable/ic_face_black"
+            android:text="联系人" />
+
+        <RadioButton
+            android:id="@+id/act_main_bottom_radio_more"
+            style="@style/radio_button_style"
+            android:checked="false"
+            android:drawableTop="@drawable/ic_more_horiz_black"
+            android:text="更多" />
+
+    </RadioGroup>
 
 </RelativeLayout>
