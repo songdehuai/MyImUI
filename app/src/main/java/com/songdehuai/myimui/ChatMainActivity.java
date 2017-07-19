@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.songdehuai.myimui.adapter.ViewPagerAdapter;
+import com.songdehuai.myimui.fragment.ChatListFragment;
 import com.songdehuai.myimui.fragment.MainFragment;
 
 import org.xutils.view.annotation.ViewInject;
@@ -38,7 +39,7 @@ public class ChatMainActivity extends AppCompatActivity {
 
     private void initViews() {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        viewPagerAdapter.addFrag(new MainFragment(), "列表");
+        viewPagerAdapter.addFrag(new ChatListFragment(), "列表");
         viewPagerAdapter.addFrag(new MainFragment(), "主页");
         viewPagerAdapter.addFrag(new MainFragment(), "更多");
         viewPager.setAdapter(viewPagerAdapter);
