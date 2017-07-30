@@ -58,7 +58,10 @@ public class ImMsgLilstAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             return new SendVoiceViewHolder(rootView);
         } else if (viewType == 5) {
             rootView = LayoutInflater.from(context).inflate(R.layout.item_img_receive, parent, false);
-            ///////////////////////
+
+        } else if (viewType == 6) {
+            rootView = LayoutInflater.from(context).inflate(R.layout.item_img_send, parent, false);
+
         }
         return null;
     }
@@ -76,6 +79,8 @@ public class ImMsgLilstAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             return 4;
         } else if ("receive_img".equals(type)) {
             return 5;
+        } else if ("send_img".equals(type)) {
+            return 6;
         }
         return 0;
     }
@@ -93,11 +98,11 @@ public class ImMsgLilstAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         } else if (holder instanceof ReceiveVoiceViewHolder) {
             ReceiveVoiceViewHolder receiveVoiceViewHolder = (ReceiveVoiceViewHolder) holder;
             receiveVoiceViewHolder.setFriendImg(msgList.get(position).getFriendsImg());
-            receiveVoiceViewHolder.text.setText(msgList.get(position).getVoiceLen() + " 秒 ");
+            receiveVoiceViewHolder.text.setText(msgList.get(position).getVoiceLen());
         } else if (holder instanceof SendVoiceViewHolder) {
             SendVoiceViewHolder sendVoiceViewHolder = (SendVoiceViewHolder) holder;
             sendVoiceViewHolder.setUserImg(msgList.get(position).getUserImg());
-            sendVoiceViewHolder.text.setText(msgList.get(position).getVoiceLen() + " 秒 ");
+            sendVoiceViewHolder.text.setText(msgList.get(position).getVoiceLen());
         }
     }
 
@@ -106,16 +111,38 @@ public class ImMsgLilstAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         return msgList.size();
     }
 
-    //public class Base
+    /**
+     * 发送的图片
+     */
+    public static class SendImageViewHolder extends RecyclerView.ViewHolder {
+        public ImageView image;
+        public ImageView imageContent;
 
-    public static class ReceiveImageViewHolder extends RecyclerView.ViewHolder {
-
-        public ReceiveImageViewHolder(View itemView) {
+        public SendImageViewHolder(View itemView) {
             super(itemView);
+            image = (ImageView) itemView.findViewById(R.id.msg_send_img);
+            imageContent = (ImageView) itemView.findViewById(R.id.msg_send_image);
         }
     }
 
+    /**
+     * 接收的图片
+     */
+    public static class ReceiveImageViewHolder extends RecyclerView.ViewHolder {
 
+        public ImageView image;
+        public ImageView imageContent;
+
+        public ReceiveImageViewHolder(View itemView) {
+            super(itemView);
+            image = (ImageView) itemView.findViewById(R.id.msg_receive_img);
+            imageContent = (ImageView) itemView.findViewById(R.id.msg_receive_image);
+        }
+    }
+
+    /**
+     * 发送的语音
+     */
     public static class SendVoiceViewHolder extends RecyclerView.ViewHolder {
         public ImageView image;
         public TextView text;
@@ -131,6 +158,9 @@ public class ImMsgLilstAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
     }
 
+    /**
+     * 接收的语音
+     */
     public static class ReceiveVoiceViewHolder extends RecyclerView.ViewHolder {
         public ImageView image;
         public TextView text;
@@ -146,6 +176,9 @@ public class ImMsgLilstAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
     }
 
+    /**
+     * 发送的文字
+     */
     public static class SendTextViewHolder extends RecyclerView.ViewHolder {
 
         public TextView text;
@@ -163,6 +196,9 @@ public class ImMsgLilstAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     }
 
+    /**
+     * 接收的文字
+     */
     public static class ReceiveTextViewHolder extends RecyclerView.ViewHolder {
         public TextView text;
         public ImageView image;
